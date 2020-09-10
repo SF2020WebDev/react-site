@@ -1,19 +1,33 @@
 import React, {useState} from 'react'
-import SignUp from './signup'
-import { useState } from 'react'
 
-const SignUpPage = () => {
+const SignUpPage = (props) => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
 
     return(
-        <div>
-            <input value={name} onChange={e => setName(e.target.value)} placeholder="Name" />
-            <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email Address" />
+        <div style= {{
+            backgroundColor:"grey", textAlign:"center"
+        }}>
+            <h5 style={{justifyContent:"flex-start", alignItems:"center", flex:1}}>Welcome to the simple react site that I've built.</h5>
 
-            <SignUp name={name} email={email}
-            />
-            <button onClick={()=>console.log(name, email)}>Sign Up</button>
+            <h1 style={{justifyContent:"flex-start", alignItems:"center", flex:1}}>SIGN UP TO GET STARTED</h1>
+
+            <div style={{
+                backgroundColor:"orange", backgroundSize:"10", borderRadius:"25", borderBlockColor:"orange", borderWidth:"50"
+            }}>
+
+            <input  style={{backgroundColor:"white"}}
+            value={name} onChange={e => setName(e.target.value)} placeholder="Name" />
+            <br />
+
+            <input style={{backgroundColor:"white"}}
+            value={email} onChange={e => setEmail(e.target.value)} placeholder="Email Address" />
+            <br />
+
+            <button onClick={()=>console.log(name, email)}>Sign up</button>
+
+            </div>
+
         </div>
     )
 }

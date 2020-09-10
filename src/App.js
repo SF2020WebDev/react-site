@@ -5,16 +5,18 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './pages/home'
+import SignUpPage from './pages/signup/signupFunctions'
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path='/'>
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
+    <div>
+        <SignUpPage />
+        <Router>
+          <Switch>
+            <Route path='/home' component={Home} />
+          </Switch>
+        </Router>
+    </div>
   );
 }
 
