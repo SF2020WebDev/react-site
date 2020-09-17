@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Button = () => {
+const Button = ({onClick, text}) => {
     return(
         <div>
             <button style={{
@@ -9,7 +9,7 @@ const Button = () => {
                 borderColor:"white",
                 borderRadius:"10"
             }}
-            onClick={()=>console.log(name, email)}>Sign up</button>
+            onClick={onClick}>{text}</button>
         </div>
     )
 }
