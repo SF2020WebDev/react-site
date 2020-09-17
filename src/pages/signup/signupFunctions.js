@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Button from './components/button.js'
 
 const SignUpPage = (props) => {
     const [name, setName] = useState("")
@@ -24,7 +25,7 @@ const SignUpPage = (props) => {
             value={email} onChange={e => setEmail(e.target.value)} placeholder="Email Address" />
             <br />
 
-            <button onClick={()=>console.log(name, email)}>Sign up</button>
+            <Button onClick={()=>console.log(name, email)}>{text="Sign up"}</Button>
 
             </div>
 
