@@ -1,10 +1,9 @@
 import React from 'react'
 
-const Input = () => {
+const Input = ({value, onChange, placeholder}) => {
     return(
         <div>
-            <input value={name} onChange={e => setName(e.target.value)} placeholder="Name" />
-            <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email address" />
+            <input value={value} onChange={onChange} placeholder={placeholder} />
         </div>
     )
 }
