@@ -1,14 +1,19 @@
-import React from 'react'
-import ItemDetails from './item.js'
+import React, { createContext, useState } from 'react'
 
-const ContextBasket = ({children}) => {
+export const BasketContext = createContext({
+    occupied: {},
+    updateOccupied: () => null
+})
+
+const Basket = ({children}) => {
+    const [occupied, setOccupied] = useState(false)
+
     return(
-        <>
-            <ItemDetails>
+        <BasketContext.Provider
+            value={{occupied, updateOccupied: setOccupied}}>
                 {children}
-            </ItemDetails>
-        </>
+        </BasketContext.Provider>
     )
 }
 
-export default ContextBasket
+export default Basket

@@ -6,7 +6,7 @@ export const ItemContext = createContext({
 })
 
 const ItemDetails = ({children}) => {
-    const [item, setItem] = useState({name:""})
+    const [item, setItem] = useState({name:"Lilies", price:"£3.99"})
 
     return(
         <ItemContext.Provider

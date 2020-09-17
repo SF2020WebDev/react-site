@@ -6,7 +6,10 @@ import {
 } from "react-router-dom";
 import Home from './pages/home'
 import SignUpPage from './pages/signup/signupFunctions';
-import ContextSource from './context/root'
+import ItemDetails from './context/item';
+import Checkout from './pages/checkout/checkout.js';
+import Confirmation from './pages/confirmation/confirmation.js'
+import ContextSource from './context/root';
 
 function App() {
   return (
@@ -17,7 +20,7 @@ function App() {
           <Route path='/home' component={Home} />
           <Route path='/checkout' component={Checkout} />
           <Route path='/confirmation' component={Confirmation} />
-          <Route path='/item/:id' component={Item}/>
+          <Route path='/item/:id' component={ItemDetails}/>
         </Switch>
       </Router>
     </ContextSource>
