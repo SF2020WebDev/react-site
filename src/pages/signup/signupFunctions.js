@@ -1,9 +1,14 @@
 import React, {useState} from 'react'
-import Button from './components/button.js'
+import Button from '../../components/button.js'
+import Input from '../../components/input.js'
 
 const SignUpPage = (props) => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
+
+    const handleClick = () => {
+        props.history.push('/home')
+      }
 
     return(
         <div style= {{
@@ -17,15 +22,15 @@ const SignUpPage = (props) => {
                 backgroundColor:"orange", backgroundSize:"10", borderRadius:"25", borderBlockColor:"orange", borderWidth:"50"
             }}>
 
-            <input  style={{backgroundColor:"white"}}
+            <Input  style={{backgroundColor:"white"}}
             value={name} onChange={e => setName(e.target.value)} placeholder="Name" />
             <br />
 
-            <input style={{backgroundColor:"white"}}
+            <Input style={{backgroundColor:"white"}}
             value={email} onChange={e => setEmail(e.target.value)} placeholder="Email Address" />
             <br />
 
-            <Button onClick={()=>console.log(name, email)}>{text="Sign up"}</Button>
+            <Button onClick={()=>console.log(name, email)} onClick={handleClick} text="Sign up" />
 
             </div>
 
