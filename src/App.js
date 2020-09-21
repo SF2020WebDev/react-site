@@ -16,7 +16,7 @@ function App() {
     <ContextSource>
       <Router>
         <Switch>
-          <Route path='/' component={SignUpPage} />
+          <Route path='/' exact component={SignUpPage} />
           <Route path='/home' component={Home} />
           <Route path='/checkout' component={Checkout} />
           <Route path='/confirmation' component={Confirmation} />

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Button = ({onClick, text}) => {
+const Button = ({onClick, disabled, text}) => {
     return(
         <div>
             <button style={{
@@ -9,6 +9,7 @@ const Button = ({onClick, text}) => {
                 borderColor:"white",
                 borderRadius:"10"
             }}
+            disabled={disabled}
             onClick={onClick}>{text}</button>
         </div>
     )
