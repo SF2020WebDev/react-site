@@ -11,36 +11,52 @@ const SignUpPage = (props) => {
 
     const handleClick = () => {
         props.history.push('/home')
+        console.log(name, email)
       }
 
     return(
         <div style= {{
-            backgroundColor:"grey", textAlign:"center", height: 600,
+            backgroundColor:"grey", textAlign:"center", height: 600, alignItems:"center", justifyContent:"center", display:"flex", flexDirection:"column"
         }}>
             <h5 style={{justifyContent:"flex-start", alignItems:"center", flex:1}}>Welcome to the simple react site that I've built.</h5>
 
             <h1 style={{justifyContent:"flex-start", alignItems:"center", flex:1}}>SIGN UP TO GET STARTED</h1>
 
             <div style={{
-                backgroundColor:"orange", position: "center",
+                flex: 1,
+                alignItems:"center",
+                alignContent:"center",
+                backgroundColor:"orange", 
+                justifyContent:"center",
                 borderRadius:25,
-                width: 500,
-                height: 300,
-                marginLeft:370,
+                width:400,
+                height:300
+                
             }}>
 
+            <br />
             <br />
 
             <Input  style={{backgroundColor:"white", placeholderColor:"blue", fontColor:"blue"}}
             value={name} onChange={e => setName(e.target.value)} placeholder="Name" />
             <br />
-
-            <Input style={{backgroundColor:"white", placeholderColor:"blue", fontColor:"blue"}} 
-            value={email} onChange={e => setEmail(e.target.value)} placeholder="Email Address" />
             <br />
 
-            <Button onClick={()=>console.log(name, email)} disabled={!email.length || !name.length} onClick={handleClick} text="Sign up" />
+            <Input style={{backgroundColor:"white", placeholderColor:"blue", fontColor:"blue"}} 
+            value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" />
+            <br />
+            <br />
 
+            <Button style={{
+                backgroundColor:"white",
+                fontColor:"blue",
+                borderRadius:25
+            }} 
+            onClick={handleClick} disabled={!email.length || !name.length} text="Sign up" />
+
+            <br />
+            <br />
+            
             </div>
 
         </div>

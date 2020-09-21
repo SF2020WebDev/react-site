@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './pages/home'
-import SignUpPage from './pages/signup/signupFunctions';
+import SignUpPage from './pages/signup/signup';
 import ItemDetails from './context/item';
 import Checkout from './pages/checkout/checkout.js';
 import Confirmation from './pages/confirmation/confirmation.js'
