@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './pages/home'
-import SignUpPage from './pages/signup/signupFunctions';
+import SignUpPage from './pages/signup/signup';
 import ItemDetails from './context/item';
 import Checkout from './pages/checkout/checkout.js';
 import Confirmation from './pages/confirmation/confirmation.js'
@@ -16,7 +16,7 @@ function App() {
     <ContextSource>
       <Router>
         <Switch>
-          <Route path='/' component={SignUpPage} />
+          <Route path='/' exact component={SignUpPage} />
           <Route path='/home' component={Home} />
           <Route path='/checkout' component={Checkout} />
           <Route path='/confirmation' component={Confirmation} />
