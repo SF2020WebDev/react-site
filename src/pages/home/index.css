@@ -1,11 +1,13 @@
 .container {
-    display: "flex";
+    display: flex;
     background-color: gray;
     text-align: center;
     height: 1750px;
     align-items: center;
     justify-content: center;
-    flex-direction: column
+    flex:1;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .title {
@@ -28,25 +30,9 @@
 
 }
 
-.row {
-    display: flex;
-    flex-direction: row;
-}
 
 .box {
-    flex: 1;
-    align-items: center;
-    align-content: center;
-    background-color: orange;
-    justify-content: center;
-    align-self: flex-start;
-    margin: 50px;
-    border-radius: 25px;
-    height:200px
-}
-
-.picture {
-    height:100px;
-    width:100px;
-    padding-top: 5
+    flex:1;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
