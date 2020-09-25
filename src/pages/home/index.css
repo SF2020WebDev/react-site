@@ -1,19 +1,13 @@
 .container {
-    display: flex;
     background-color: gray;
     text-align: center;
-    height: 1750px;
-    align-items: center;
-    justify-content: center;
     flex:1;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
 .title {
-    justify-content: flex-start;
-    align-items: center;
-    flex: 1
+
 }
 
 .button {
@@ -32,6 +26,7 @@
 
 
 .box {
+    display: flex;
     flex:1;
     flex-direction: row;
     flex-wrap: wrap;

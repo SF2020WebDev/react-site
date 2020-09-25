@@ -10,7 +10,7 @@ import ItemDetails from './context/item';
 import Checkout from './pages/checkout/checkout.js';
 import Confirmation from './pages/confirmation/confirmation.js'
 import ContextSource from './context/root';
-
+import './App.css'
 function App() {
   return (
     <ContextSource>
