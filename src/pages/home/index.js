@@ -8,9 +8,10 @@ const Home = (props) => {
     props.history.push('/checkout')
   }
 
-  const itemSelect = () => {
-    props.history.push('./item/${id}')
+  const itemSelect = ( id ) => {
+    props.history.push(`./item/${id}`)
   }
+
 
   const ItemsList = [{image:"https://www.ikea.com/gb/en/images/products/smycka-artificial-flower-rose-red__0903311_PE596728_S5.JPG", name:"Red Rose", price: "£5.99", id:1},
                     {image:"https://images.squarespace-cdn.com/content/v1/584154245016e1ca1b9b367f/1581948776537-58NN0HYE4LTB84TIACXX/ke17ZwdGBToddI8pDm48kNiEM88mrzHRsd1mQ3bxVct7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0s0XaMNjCqAzRibjnE_wBlkZ2axuMlPfqFLWy-3Tjp4nKScCHg1XF4aLsQJlo6oYbA/AC2EC879-18E9-43B7-9761-BAA9FA81013A?format=2500w", name: "White Rose", price:"£5.99", id:2},
@@ -32,11 +33,13 @@ const Home = (props) => {
 const List = () => {
   return(
       ItemsList.map((ItemsList) => {
-          return <SaleItem image={ItemsList.image} name={ItemsList.name} price={ItemsList.price} id={ItemsList.id} />
+          return <SaleItem image={ItemsList.image} select={itemSelect}
+                  name={ItemsList.name} price={ItemsList.price} 
+                  id={ItemsList.id} > 
+                  </SaleItem>
       })
   )
 }
-
 
   return(
       <div className="container">
@@ -44,7 +47,7 @@ const List = () => {
         <button className="button" onClick={handleClick}>Check Out</button>
       <br />
       <br />
-        <div className="box" onClick={itemSelect}>
+        <div className="box">
             {List()}
         </div>
       <br/>
