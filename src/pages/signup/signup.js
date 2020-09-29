@@ -50,7 +50,12 @@ const SignUpPage = (props) => {
             <Button style={{
                 backgroundColor:"white",
                 fontColor:"blue",
-                borderRadius:25
+                borderRadius:25,
+                height:50,
+                width: 150,
+                border: "none",
+                color:"blue",
+                borderRadius:25,
             }} 
             onClick={handleClick} disabled={!email.length || !name.length} text="Sign up" />
 
