@@ -42,7 +42,7 @@ const Item = (props) => {
     const randomMap = () => {
         return(
             random.map((random) => {
-                return <randomItem image={ItemsList.image} select={itemSelect}
+                return <randomItem image={ItemsList.image}
                 name={ItemsList.name} price={ItemsList.price} 
                 id={ItemsList.id} />
             })
@@ -61,9 +61,11 @@ const Item = (props) => {
             <br />
 
             <div className="box2">
-                <ItemDetails>{specific}</ItemDetails>
+                <SaleItem id={specific.id} image={specific.image}
+                  name={specific.name} price={specific.price} select={specific.select} />
                 <br />
                 <button className="add">Add To Basket</button>
+                <br />
             </div>
 
         {randomMap()}
