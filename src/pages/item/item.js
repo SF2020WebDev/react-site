@@ -2,8 +2,9 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import SaleItem from '../../components/data'
 import ItemDetails from '../../context/item'
+import './item.css'
 
-const Item = () => {
+const Item = (props) => {
 
     const handleClick = (props) => {
         props.history.push('/checkout')
@@ -11,6 +12,10 @@ const Item = () => {
 
     const homeClick = (props) => {
         props.history.push('/home')
+      }
+
+    const itemSelect = ( id ) => {
+        props.history.push(`./item/${id}`)
       }
 
     const ItemsList = [{image:"https://www.ikea.com/gb/en/images/products/smycka-artificial-flower-rose-red__0903311_PE596728_S5.JPG", name:"Red Rose", price: "£5.99", id:1},
@@ -31,26 +36,37 @@ const Item = () => {
 ]
 
     const _ = require('lodash')
-    const Random = _.sampleSize(ItemsList, 6)
-    console.log(Random)
+    const random = _.sampleSize(ItemsList, 6)
+    console.log(random)
+
+    const randomMap = () => {
+        return(
+            random.map((random) => {
+                return <randomItem image={ItemsList.image} select={itemSelect}
+                name={ItemsList.name} price={ItemsList.price} 
+                id={ItemsList.id} />
+            })
+        )
+    }
 
     const { id } = useParams();
     console.log(useParams(id))
-    _.find(ItemsList, {id:id})
+    const specific = _.find(ItemsList, {id:id})
 
     return (
-        <div className="container">
-                <button className="button" onClick={handleClick}>Check Out</button>
-                <button className="button" onClick={homeClick}>Home Page</button>
+        <div className="container2">
+                <button className="checkout" onClick={handleClick}>Check Out</button>
+                <button className="home" onClick={homeClick}>Home Page</button>
             <br />
             <br />
 
-            <div className="box">
-                <ItemDetails />
+            <div className="box2">
+                <ItemDetails>{specific}</ItemDetails>
+                <br />
                 <button className="add">Add To Basket</button>
             </div>
 
-        <Random />
+        {randomMap()}
             
 
         </div>
