@@ -29,6 +29,22 @@
 .add {
     display: flex;
     align-self: center;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    bottom: 10px;
+    background-color: white;
+    border: none;
+    height: 30px;
+    width: 100px
+}
+
+.options {
+    position: relative;
+    right: 50px;
 }
 
 .box2 {
@@ -37,28 +53,37 @@
     justify-self: center;
     flex:1;
     flex-direction: row;
-    flex-wrap: wrap;
     background-color: orange;
-    height: 300px;
-    width: 400px;
     align-items: center;
-    align-content: center;
-    justify-content: center
+    align-content: space-between;
+    justify-content: center;
+    position: relative;
+    top: 100px;
+    border: none;
+    display: flex
+}
+
+.item {
+    align-self: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    border: none;
+}
+
+.details {
+    border:none;
 }
 
 .container2 {
     background-color: gray;
     text-align: center;
-    flex:1;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
     align-content: center;
     align-items: center;
     justify-items: center;
     display: flex;
     flex-direction: column;
-    position: relative
+
 }
 
 
