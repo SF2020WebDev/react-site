@@ -27,8 +27,6 @@ const Item = (props) => {
         }
     }
 
-    
-
 
     const ItemsList = [{image1:"https://www.ikea.com/gb/en/images/products/smycka-artificial-flower-rose-red__0903311_PE596728_S5.JPG", image2:"https://www.fiordalisa.ch/wp-content/uploads/2017/12/IMG_4605.jpg", image3:"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTShThwef8LHLyXjpCKsuQjPGhnH17A0h5gpA&usqp=CAU", name:"Red Rose", color1: "Traditional Red", color2:"Deep Pink", color3:"Purple", price: "£5.99", id:1},
       {image1:"https://images.squarespace-cdn.com/content/v1/584154245016e1ca1b9b367f/1581948776537-58NN0HYE4LTB84TIACXX/ke17ZwdGBToddI8pDm48kNiEM88mrzHRsd1mQ3bxVct7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0s0XaMNjCqAzRibjnE_wBlkZ2axuMlPfqFLWy-3Tjp4nKScCHg1XF4aLsQJlo6oYbA/AC2EC879-18E9-43B7-9761-BAA9FA81013A?format=2500w", image2:"https://images-na.ssl-images-amazon.com/images/I/91WCFjZlx7L._AC_SL1500_.jpg", image3:"https://images.immediate.co.uk/production/volatile/sites/10/2018/05/2048x1365-Yellow-roses-LI3130949-c7d988a.jpg?quality=45&resize=960,640", name: "White Rose", color1: "Traditional White", color2: "Light Pink", color3:"White and Yellow", price:"£5.99", id:2},
@@ -49,15 +47,14 @@ const Item = (props) => {
 
     const _ = require('lodash')
     const random = _.sampleSize(ItemsList, 6)
-    console.log(random)
+    console.log('sampleSize()', random)
 
     const randomMap = () => {
         return(
             random.map((random) => {
-                return <randomItem image1={ItemsList.image1}
-                image2={ItemsList.image2} image3={ItemsList.image3}
-                name={ItemsList.name} price={ItemsList.price} 
-                id={ItemsList.id} />
+                return <SaleItem image1={random.image1}
+                name={random.name} price={random.price} 
+                id={random.id} />
             })
         )
     }
@@ -74,14 +71,13 @@ const Item = (props) => {
             <br />
 
             <div className="box2">
-                <SaleItem className="item" id={specific.id} image1={specific.image1} image2={specific.image2} image3={specific.image3}/>
-                <SaleItem className="details" name={specific.name} price={specific.price} />
+                <SaleItem className="item" id={specific.id} images={specific.image1, specific.image2, specific.image3} name={specific.name} price={specific.price}/>
                 <form >
                     <label>
-                          <select className="options" >
-                              <option value="colour1">{specific.color1}</option>
-                              <option value="colour2">{specific.color2}</option>
-                              <option value="colour3">{specific.color3}</option>
+                          <select className="options" onChange={(e) => e.target.value}>
+                              <option value={specific.color1} img={specific.image1}>{specific.color1}</option>
+                              <option value={specific.color2} img={specific.image2}>{specific.color2}</option>
+                              <option value={specific.color3} img={specific.image3}>{specific.color3}</option>
                           </select>
                     </label>
                 </form>
@@ -89,7 +85,7 @@ const Item = (props) => {
                 <br />
             </div>
 
-        {randomMap()}
+        {randomMap}
             
 
         </div>
