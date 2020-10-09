@@ -1,0 +1,89 @@
+.checkout {
+    background-color: gold;
+    color: blue;
+    border-radius: 100%;
+    height: 100px;
+    width: 100px;
+    border: none;
+    position: absolute;
+    align-self: flex-end;
+    top: 30px;
+    right:50px;
+
+}
+
+.home {
+    background-color: gold;
+    color: blue;
+    border-radius: 100%;
+    height: 100px;
+    width: 100px;
+    border: none;
+    position: absolute;
+    align-self: flex-start;
+    left: 50px;
+    top: 30px;
+
+}
+
+.add {
+    display: flex;
+    align-self: center;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    bottom: 10px;
+    background-color: white;
+    border: none;
+    height: 30px;
+    width: 100px
+}
+
+.options {
+    position: relative;
+    right: 50px;
+}
+
+.box2 {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    flex:1;
+    flex-direction: row;
+    background-color: orange;
+    align-items: center;
+    align-content: space-between;
+    justify-content: center;
+    position: relative;
+    top: 100px;
+    border: none;
+    display: flex
+}
+
+.item {
+    align-self: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    border: none;
+}
+
+.details {
+    border:none;
+}
+
+.container2 {
+    background-color: gray;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
