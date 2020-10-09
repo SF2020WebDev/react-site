@@ -71,13 +71,21 @@ const Item = (props) => {
             <br />
 
             <div className="box2">
-                <SaleItem className="item" id={specific.id} images={specific.image1, specific.image2, specific.image3} name={specific.name} price={specific.price}/>
+                <image id="theImage" src={specific.image1}/>
+                <script>
+                    const colourSelect = document.getElementById("colour-select");
+                    const imageChoice = document.getElementById("theImage");
+
+                    colourSelect.addEventListener('input',() => theImage.src = imageChoice.value);
+                </script>
+                
+                <SaleItem className="item" id={specific.id} name={specific.name} price={specific.price}/>
                 <form >
                     <label>
-                          <select className="options" onChange={(e) => e.target.value}>
-                              <option value={specific.color1} img={specific.image1}>{specific.color1}</option>
-                              <option value={specific.color2} img={specific.image2}>{specific.color2}</option>
-                              <option value={specific.color3} img={specific.image3}>{specific.color3}</option>
+                          <select id="colour-select" className="options" onChange={(e) => e.target.value}>
+                              <option value={specific.image1}>{specific.color1}</option>
+                              <option value={specific.image2}>{specific.color2}</option>
+                              <option value={specific.image3}>{specific.color3}</option>
                           </select>
                     </label>
                 </form>
